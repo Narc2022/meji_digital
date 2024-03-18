@@ -4,6 +4,7 @@ import { fetchUsers } from "./Api/User";
 import { useEffect, useState } from "react";
 import DetailsPage from "./Components/DetailsPage";
 import Cards from "./Components/Cards";
+import NavBar from "./Components/NavBar";
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -20,22 +21,11 @@ export default function App() {
   }, []);
   return (
     <Router>
+      <NavBar />
       <Routes>
-        <Route path="/users/:id" element={<DetailsPage />} />
+        <Route path="/user/:id" element={<DetailsPage />} />
         <Route path="/" element={<Cards data={data} />} />
       </Routes>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }

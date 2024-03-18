@@ -22,7 +22,9 @@ function App() {
     <div>
       hi
       {/* <Route exact path="/" component={<Cards data={data} />} /> */}
-      <Route exact path="/user/:userId" component={DetailsPage} />
+      <Route exact path="/user/:id">
+        <DetailsPage />
+      </Route>
     </div>
   );
 }
